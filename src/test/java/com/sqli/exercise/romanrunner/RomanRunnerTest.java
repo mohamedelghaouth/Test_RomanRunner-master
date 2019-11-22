@@ -5,8 +5,10 @@ package com.sqli.exercise.romanrunner;
 import static org.junit.Assert.assertEquals;
 
 import com.sqli.exercise.romanrunner.entities.Charioteer;
-import com.sqli.exercise.romanrunner.entities.Circenses;
+import com.sqli.exercise.romanrunner.entities.Circences;
+import com.sqli.exercise.romanrunner.entities.CircensesBuilder;
 import com.sqli.exercise.romanrunner.entities.Knight;
+import com.sqli.exercise.romanrunner.entities.ObstacleHitedException;
 import com.sqli.exercise.romanrunner.entities.Player;
 import org.junit.Test;
 
@@ -46,7 +48,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void circensesBuilderTest() {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addEmptySlot().addCoin().addObstacle()
                 .build();
 
@@ -68,7 +70,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerCanStartTheGame() {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addEmptySlot().addCoin().addObstacle()
                 .build();
 
@@ -93,7 +95,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerCanMoveForward() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addEmptySlot()
                 .build();
 
@@ -115,7 +117,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerEarns100AtFinishLine() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addEmptySlot()
                 .build();
 
@@ -151,7 +153,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerEarns10PerCoin() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin()
                 .build();
 
@@ -194,7 +196,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void complexCircensesBuilderTest() {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addCoin().addEmptySlot().addCoin().addObstacle()
                 .right().addCoin().addEmptySlot().addCoin().addObstacle()
                 .left().addCoin().addCoin()
@@ -225,7 +227,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerCanMoveRight() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addEmptySlot()
                 .build();
 
@@ -257,7 +259,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void aPlayerCanMoveLeft() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addEmptySlot()
                 .build();
 
@@ -281,7 +283,7 @@ public class RomanRunnerTest {
      */
     @Test
     public void playerHitObstacle() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addEmptySlot()
                 .right().addCoin().addEmptySlot()
                 .left().addCoin().addObstacle()
@@ -334,7 +336,7 @@ public class RomanRunnerTest {
      */
     @Test(expected = ObstacleHitedException.class)
     public void playerCantMoveAfterHitingObstacle() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addObstacle()
                 .build();
         Player player = new Charioteer("augustus");
@@ -355,10 +357,10 @@ public class RomanRunnerTest {
     /**
      * A new player type, the Knight. A Knight earns 20 points per coin.
      * A Knight can bypass an obstacle, but he loses 10 points if he does.
-     */
+     */ 
     @Test
     public void charioteerCanBypassHitObstacle() throws ObstacleHitedException {
-        Circenses circenses = new CircensesBuilder()
+        Circences circenses = new CircensesBuilder()
                 .addCoin().addEmptySlot()
                 .right().addCoin().addEmptySlot()
                 .left().addCoin().addObstacle()

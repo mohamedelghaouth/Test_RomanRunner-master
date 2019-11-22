@@ -1,6 +1,6 @@
 package com.sqli.exercise.romanrunner.entities;
 
-public class CircensesBuilder implements Circences {
+public class CircensesBuilder extends Circences {
 
 	public Circences addCoin() {
 		return null;
@@ -21,5 +21,14 @@ public class CircensesBuilder implements Circences {
 	public Circences draw() {
 		return null;
 	}
+	
+	public Circences left() {
+		return null;
+	}
+	
+	public Circences right() {
+		return null;
+	}
 
+	
 }

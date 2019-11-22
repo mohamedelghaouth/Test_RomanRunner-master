@@ -1,11 +1,13 @@
 package com.sqli.exercise.romanrunner.entities;
 
-public interface Circences {
+public abstract class Circences {
 
-	Circences addCoin();
-	Circences addEmptySlot();
-	Circences addObstacle();
-	Circences build();
-	Circences draw();
+	 abstract public Circences addCoin();
+	 abstract public Circences addEmptySlot();
+	 abstract public Circences addObstacle();
+	 abstract public Circences build();
+	 abstract public Circences draw();
+	 abstract public Circences right();
+	 abstract public Circences left();
 	
 }
