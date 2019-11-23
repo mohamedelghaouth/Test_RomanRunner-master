@@ -97,7 +97,7 @@ public class RomanRunnerTest {
     public void aPlayerCanMoveForward() throws ObstacleHitedException {
         Circences circenses = new CircensesBuilder()
                 .addEmptySlot()
-                .build();
+                .build(); 
 
         Player player = new Charioteer("tiberius");
         player.startGame(circenses);
